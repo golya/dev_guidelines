@@ -14,5 +14,8 @@ This repo is a collection of development guidelines
   - A module can not use the DI container.
   - A module can store state.
 
+### Tests
+  - Every pure module should be tested by unit tests, if you need to mock it then probably you have a problem with your architecture.
+
 If something is not good in the guidelines then you have two options. Change the guideline or create a plan about how will you fix the guideline violation.
 	
