@@ -1,4 +1,4 @@
-# dev_guidelines
+# DEV guidelines
 This repo is a collection of development guidelines
 
 ## Guidelines
