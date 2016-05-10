@@ -4,6 +4,7 @@ This repo is a collection of development guidelines
 ## Guidelines
 ### Services
   - A service can not import another service, have to use DI container.
+  - Can not require the container module in a service.
   - A service can import pure modules possibly from ./
   - In services you should not use native data struct or control structures.
   - A service should not store internal state.
