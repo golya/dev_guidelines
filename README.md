@@ -99,6 +99,7 @@ in ever new project, therefore we make a standardized DI system.
 
 #### Architectural questions.
 #### Is the code clean?
+https://cleancoders.com/
 #### Validate the business logic if you can.
 #### Try the feature manually.
 
