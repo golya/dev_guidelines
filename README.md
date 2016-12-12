@@ -9,9 +9,8 @@ This repo is a collection of development guidelines
     - [Commit message body](#commit-message-body)
     - [Commit separation](#commit-separation)
     - [Architectural questions.](#architectural-questions)
-    - [Is the code clean?](#is-the-code-clean)
-    - [Validate the business logic if you can.](#validate-the-business-logic-if-you-can)
-    - [Try the feature manually.](#try-the-feature-manually)
+    - [Clean code](#clean-code)
+    - [Business logic.](#business-logic)
 * [Development](#development)
 * [Testing](#testing)
 * [Version control](#version-control)
@@ -98,10 +97,14 @@ in ever new project, therefore we make a standardized DI system.
 - It helps to the reviewer and later to developers to understand what was you intent with the commits. 
 
 #### Architectural questions.
-#### Is the code clean?
+* [Check the Y2 Guidelines](#y2-guidelines)
+
+#### Clean code
+- classic review step where you should check that everything is clean and understandable.
 https://cleancoders.com/
-#### Validate the business logic if you can.
-#### Try the feature manually.
+#### Business logic
+- Try the new feature manually.
+- Validate the business logic if you can. Every developer should understand the business logic, and they can help each other to check everything is ok and it helps to understand the business logic which not developed by you.
 
 ## Development
 - Use Y2 approach for projects.
