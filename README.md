@@ -102,6 +102,7 @@ in ever new project, therefore we make a standardized DI system.
 #### Clean code
 - classic review step where you should check that everything is clean and understandable.
 https://cleancoders.com/
+
 #### Business logic
 - Try the new feature manually.
 - Validate the business logic if you can. Every developer should understand the business logic, and they can help each other to check everything is ok and it helps to understand the business logic which not developed by you.
