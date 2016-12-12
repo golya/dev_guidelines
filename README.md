@@ -1,6 +1,25 @@
 # DEV guidelines
 This repo is a collection of development guidelines
 
+* [Review](#review)
+  + [On client project](#on-client-project)
+  + [Generic review](#generic-review)
+    - [Run the tests on your env. :)](#run-the-tests-on-your-env-)
+    - [Check commit message](#check-commit-message)
+    - [Create clear and structured commit message](#create-clear-and-structured-commit-message)
+    - [Does the the message body contains the right context?](#does-the-the-message-body-contains-the-right-context)
+    - [Can the commit be separated into smaller commits?](#can-the-commit-be-separated-into-smaller-commits)
+    - [Architectural questions.](#architectural-questions)
+    - [Is the code clean?](#is-the-code-clean)
+    - [Validate the business logic if you can.](#validate-the-business-logic-if-you-can)
+    - [Try the feature manually.](#try-the-feature-manually)
+* [Development](#development)
+* [Testing](#testing)
+* [Version control](#version-control)
+* [Y2 Guidelines](#y2-guidelines)
+  + [Services](#services)
+  + [Modules](#modules)
+
 ## Review
 ### On client project
   - Every commit is reviewed by at least one developer before push to master.
@@ -26,6 +45,7 @@ This repo is a collection of development guidelines
       - It force you to separate the business logic from generic code, which generate a lot of open source and reusable code.
       - It facilitate to create clean and maintainable code.
       - It helps you to write proper test, which fasten the development.
+
 ## Testing
 - EMTs and IMTs should be tested by BDD. 
   - Driven by user features.
