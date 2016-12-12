@@ -7,7 +7,7 @@ This repo is a collection of development guidelines
     - [Run the tests on your env. :)](#run-the-tests-on-your-env-)
     - [Create clear and structured commit header](#create-clear-and-structured-commit-header)
     - [Commit message body](#commit-message-body)
-    - [Can the commit be separated into smaller commits?](#can-the-commit-be-separated-into-smaller-commits)
+    - [Commit separation](#commit-separation)
     - [Architectural questions.](#architectural-questions)
     - [Is the code clean?](#is-the-code-clean)
     - [Validate the business logic if you can.](#validate-the-business-logic-if-you-can)
@@ -92,7 +92,11 @@ We do not want to implement these business logic free but generic services
 in ever new project, therefore we make a standardized DI system.
 ```
 
-#### Can the commit be separated into smaller commits?
+#### Commit separation
+- Can the commit be separated into smaller commits?
+- Do not commit the feature and the usage together, the implementation and the usage has a different context. You can push the tested implementation eariler the the usage, and from that point everyone can use it.
+- It helps to the reviewer and later to developers to understand what was you intent with the commits. 
+
 #### Architectural questions.
 #### Is the code clean?
 #### Validate the business logic if you can.
