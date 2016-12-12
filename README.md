@@ -6,7 +6,7 @@ This repo is a collection of development guidelines
   + [Generic review](#generic-review)
     - [Run the tests on your env. :)](#run-the-tests-on-your-env-)
     - [Create clear and structured commit header](#create-clear-and-structured-commit-header)
-    - [Does the the message body contains the right context?](#does-the-the-message-body-contains-the-right-context)
+    - [Commit message body](#commit-message-body)
     - [Can the commit be separated into smaller commits?](#can-the-commit-be-separated-into-smaller-commits)
     - [Architectural questions.](#architectural-questions)
     - [Is the code clean?](#is-the-code-clean)
@@ -31,7 +31,7 @@ This repo is a collection of development guidelines
 
 #### Commit Message Format
 
-Use a similar apporach that angular contribution guide described. Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:
+Use a similar apporach than the angular contribution guide described. Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:
 
 ```
 <type>(<scope>): <subject>
@@ -71,7 +71,26 @@ The subject contains succinct description of the change:
 use the imperative, present tense: "change" not "changed" nor "changes"
 no dot (.) at the end
 
-#### Does the the message body contains the right context?
+#### Commit message body
+Create as detailed message body as you can if you have context
+- Can the motivation for the change.
+- Can be the context of the change.
+- It should not be implementation details.
+  ```
+// bad
+add the DI lib, you can register a module with
+registerModule, if the DI do not find the module
+then it throw and error
+
+// bad
+<no context>
+
+// good
+Create a DI system which is able to parse lab specific external systems.
+We do not want to implement these business logic free but generic services
+in ever new project, therefore we make a standardized DI system.
+```
+
 #### Can the commit be separated into smaller commits?
 #### Architectural questions.
 #### Is the code clean?
