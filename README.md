@@ -2,24 +2,22 @@
 This repo is a collection of development guidelines
 
 ## Review
-- On client project
+### On client project
   - Every commit is reviewed by at least one developer before push to master.
   - Every architectural changes is reviewed by the whole team.
     - To accept or improve that change is the responsibility of the whole team.
     - Needed for everyone (devs) be noticed about that change.
-- How should you review
-  - Run the tests in your env. :)
-  - Check commit message
-  - Does it clear what is the subject of change?
-  - Does the the message body contains the right context?
-    - It should not be implementation details.
-  - Can the commit be separated into smaller commits?
-    - Do not commit the feature with the usage, add different context.
-    - It helps to the reviewer and later to developers to understand what was you intent with the commits.
-  - Architectural questions.
-    - Is the code clean?
-  - Validate the business logic if you can.
-  - Try the feature manually.
+    
+### Generic review
+#### Run the tests on your env. :)
+#### Check commit message
+#### Create clear and structured commit message
+#### Does the the message body contains the right context?
+#### Can the commit be separated into smaller commits?
+#### Architectural questions.
+#### Is the code clean?
+#### Validate the business logic if you can.
+#### Try the feature manually.
 
 ## Development
 - Use Y2 approach for projects.
