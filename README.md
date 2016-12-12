@@ -76,7 +76,8 @@ Create as detailed message body as you can if you have context
 - Can the motivation for the change.
 - Can be the context of the change.
 - It should not be implementation details.
-  ```
+
+```
 // bad
 add the DI lib, you can register a module with
 registerModule, if the DI do not find the module
