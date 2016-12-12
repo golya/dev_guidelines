@@ -1,6 +1,26 @@
 # DEV guidelines
 This repo is a collection of development guidelines
 
+## Review
+- On client project
+  - Every commit is reviewed by at least one developer before push to master.
+  - Every architectural changes is reviewed by the whole team.
+    - To accept or improve that change is the responsibility of the whole team.
+    - Needed for everyone (devs) be noticed about that change.
+- How should you review
+  - Run the tests in your env. :)
+  - Check commit message
+  - Does it clear what is the subject of change?
+  - Does the the message body contains the right context?
+    - It should not be implementation details.
+  - Can the commit be separated into smaller commits?
+    - Do not commit the feature with the usage, add different context.
+    - It helps to the reviewer and later to developers to understand what was you intent with the commits.
+  - Architectural questions.
+    - Is the code clean?
+  - Validate the business logic if you can.
+  - Try the feature manually.
+
 ## Development
 - Use Y2 approach for projects.
   - Separate the External Managing Tasks (EMT), Internal Managing Tasks (IMT) and Executing Tasks (ET).
@@ -36,27 +56,6 @@ This repo is a collection of development guidelines
     - It has to be business logic free problem. 
       - Example: Pub/Sub with RabbitMQ
   - Use a git hook which do not allow the force push on master on every client project.
-
-## Review
-- On client project
-  - Every commit is reviewed by at least one developer before push to master.
-  - Every architectural changes is reviewed by the whole team.
-    - To accept or improve that change is the responsibility of the whole team.
-    - Needed for everyone (devs) be noticed about that change.
-- How should you review
-  - Run the tests in your env. :)
-  - Check commit message
-  - Does it clear what is the subject of change?
-  - Does the the message body contains the right context?
-    - It should not be implementation details.
-  - Can the commit be separated into smaller commits?
-    - Do not commit the feature with the usage, add different context.
-    - It helps to the reviewer and later to developers to understand what was you intent with the commits.
-  - Architectural questions.
-    - Is the code clean?
-  - Validate the business logic if you can.
-  - Try the feature manually.
-
 
 ## Y2 Guidelines
 ### Services
