@@ -5,8 +5,7 @@ This repo is a collection of development guidelines
   + [On client project](#on-client-project)
   + [Generic review](#generic-review)
     - [Run the tests on your env. :)](#run-the-tests-on-your-env-)
-    - [Check commit message](#check-commit-message)
-    - [Create clear and structured commit message](#create-clear-and-structured-commit-message)
+    - [Create clear and structured commit header](#create-clear-and-structured-commit-header)
     - [Does the the message body contains the right context?](#does-the-the-message-body-contains-the-right-context)
     - [Can the commit be separated into smaller commits?](#can-the-commit-be-separated-into-smaller-commits)
     - [Architectural questions.](#architectural-questions)
@@ -29,8 +28,49 @@ This repo is a collection of development guidelines
     
 ### Generic review
 #### Run the tests on your env. :)
-#### Check commit message
-#### Create clear and structured commit message
+
+#### Commit Message Format
+
+Use a similar apporach that angular contribution guide described. Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+#### Create clear and structured commit header
+```
+// bad
+add app
+
+// good
+feat(client/app.js): initial add of client app entry point
+```
+Type must be one of the following:
+
+- feat: A new feature
+- fix: A bug fix
+- docs: Documentation only changes
+- style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- refactor: A code change that neither fixes a bug nor adds a feature
+- perf: A code change that improves performance
+- test: Adding missing or correcting existing tests
+- chore: Changes to the build process or auxiliary tools and libraries such as documentation generation
+
+Scope
+
+The scope could be anything specifying place of the commit change. For example featrues, src/client, services/user, components/root, world.js, etc...
+
+Subject
+
+The subject contains succinct description of the change:
+
+use the imperative, present tense: "change" not "changed" nor "changes"
+no dot (.) at the end
+
 #### Does the the message body contains the right context?
 #### Can the commit be separated into smaller commits?
 #### Architectural questions.
