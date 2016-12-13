@@ -146,7 +146,7 @@ https://cleancoders.com/
 ## Y2 Guidelines
 ### Managing Tasks (services)
 - Internal Managing Tasks can get External Managing Tasks and Internal Managing Tasks only through DI.
-```
+```javascript
 // bad
 const users = require(../../internal/user);
 function authService () {
@@ -166,7 +166,7 @@ function authService (users) {
 ```
 
 - Internal Managing Tasks can get Executing Task only through module system from its own directory, and the Executing task responsibility should be related to the Internal Managing Tasks.
-```
+```javascript
 // bad
 const tools = require(../../internal/messages/tools);
 
@@ -176,7 +176,7 @@ const tools = require(./tools);
 
 - External Managing Tasks can get External Managing Tasks only through DI.
 - You cannot pass a Managing Task.
-```
+```javascript
 // bad
 customerService.getCustomers(userService);
 
@@ -185,7 +185,7 @@ tools.calculateCustomerPrice(customerService);
 ```
 
 - In Managing Tasks you should not use control structures and modify, mutate state.
-```
+```javascript
 // bad
   let user = userService.getUser();
   if (user.type === undefined) {
@@ -198,10 +198,43 @@ const initializedUser = tools.initUser(user);
 ```
 
 ### Executing Tasks (modules)
-  - A module can import pure modules possibly from ./  
-  - If you want to use a public module element from another module then you should promote it to a service. 	  
-  - A module can not use the DI container.
-  - A module can store internal state in the function scope.
+- An Executing task can import modules from ./ or using the module system. If you want to use a public module element from another module then you should promote it to a service.
+```javascript
+// bad
+const tools = require('../../internal/messages/tools');
+
+// good
+const _ = require(lodash);
+const tools = require('./tools');
+```
+
+- An Exnecuting task can not use the DI container.
+```javascript
+// bad 
+const container = require('../../container');
+function calculatePrice(id, discount) {
+  price = container.get('priceService').getPriceById(id);
+  return price * discount;
+}
+
+// good
+function calculatePrice(price, discount) {
+  return price * discount;
+}
+```
+
+- An Executing task can use control stuctures and store internal state in the function scope.
+```javascript
+// good
+function execute(elements) {
+  [head, ...tail] = elements;
+  const result = head();
+  if (result) {
+    return result
+  }
+  execute(tail);
+}
+```
 
 ## Testing
 - EMTs and IMTs should be tested by BDD. 
