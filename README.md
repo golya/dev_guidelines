@@ -9,6 +9,7 @@ This repo is a collection of development guidelines
     - [Commit message body](#commit-message-body)
     - [Commit separation](#commit-separation)
     - [Architectural questions.](#architectural-questions)
+    - [Tests](#tests)
     - [Clean code](#clean-code)
     - [Business logic.](#business-logic)
 * [Development](#development)
@@ -98,6 +99,9 @@ in ever new project, therefore we make a standardized DI system.
 
 #### Architectural questions.
 * [Check the Y2 Guidelines](#y2-guidelines)
+
+#### Tests
+* [Check the Y2 testing Guidelines](#testing)
 
 #### Clean code
 - classic review step where you should check that everything is clean and understandable.
