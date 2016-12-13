@@ -12,11 +12,11 @@ This repo is a collection of development guidelines
     - [Clean code](#clean-code)
     - [Business logic.](#business-logic)
 * [Development](#development)
-* [Testing](#testing)
 * [Version control](#version-control)
 * [Y2 Guidelines](#y2-guidelines)
   + [Services](#services)
   + [Modules](#modules)
+* [Testing](#testing)
 
 ## Review
 ### On client project
@@ -115,19 +115,6 @@ https://cleancoders.com/
       - It facilitate to create clean and maintainable code.
       - It helps you to write proper test, which fasten the development.
 
-## Testing
-- EMTs and IMTs should be tested by BDD. 
-  - Driven by user features.
-  - Do not test control structures (the BDD step should be driven by user feature)
-- ET should be tested by TDD.
-  - Driven by control structures. 
-    - if/else/switch/?
-  - Do not test declarations.
-  - Do not test function is a function if in the next test you call that function.
-  - Do not test object is an object if in the next line you check a property.
-  - Try to avoid to test a whole data struct like it is fragile.
-  - Try to be mockless.
-
 ## Version control
 - Use GIT
   - Work with feature branch
@@ -157,5 +144,19 @@ https://cleancoders.com/
   - If you want to use a public module element from another module then you should promote it to a service. 	  
   - A module can not use the DI container.
   - A module can store state.
+
+## Testing
+- EMTs and IMTs should be tested by BDD. 
+  - Driven by user features.
+  - Do not test control structures (the BDD step should be driven by user feature)
+- ET should be tested by TDD.
+  - Driven by control structures. 
+    - if/else/switch/?
+  - Do not test declarations.
+  - Do not test function is a function if in the next test you call that function.
+  - Do not test object is an object if in the next line you check a property.
+  - Try to avoid to test a whole data struct like it is fragile.
+  - Try to be mockless.
+
 
 If something is not good in the guidelines then you have two options. Change the guideline or create a plan about how will you fix the guideline violation.
