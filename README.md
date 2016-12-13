@@ -237,17 +237,53 @@ function execute(elements) {
 ```
 
 ## Testing
-- EMTs and IMTs should be tested by BDD. 
-  - Driven by user features.
-  - Do not test control structures (the BDD step should be driven by user feature)
-- ET should be tested by TDD.
-  - Driven by control structures. 
-    - if/else/switch/?
-  - Do not test declarations.
-  - Do not test function is a function if in the next test you call that function.
-  - Do not test object is an object if in the next line you check a property.
-  - Try to avoid to test a whole data struct like it is fragile.
-  - Try to be mockless.
+### EMTs and IMTs should be tested by BDD. 
+- Driven by user features.
+- Do not test control structures (the BDD step should be driven by user feature)
+### ET should be tested by TDD.
+- Driven by control structures. 
+  - if/else/switch/?
+- Do not test declarations, for example do not test function is a function if in the next test you call that function.
+```javascript
+// bad 
+const prices = require('./prices');
+it('test', () => {
+  assert.isFunction(prices.calculatePrice);
+});
+
+it('should calculate the price', () => {
+  expect(prices.calculatePrice(2,3)).toBeEqual(6);
+});
+
+// good
+const prices = require('./prices');
+
+it('should calculate the price', () => {
+  expect(prices.calculatePrice(2,3)).toBeEqual(6);
+});
+```
+ 
+- Try to avoid to test a whole data struct, it is fragile.
+```
+// bad
+it ('test', () => {
+  expect(data).toBeEqual({
+    a: {b: [1,2,4]},
+    price: 3
+  })
+});
+
+// good
+it('test' () => {
+  assertPirce(data, 3);
+})
+
+function assertPrice(data, price) {
+  expect(data.price).toBeEqual(price);
+}
+```
+
+- Try to be mockless using the Y2 approach.
 
 
 If something is not good in the guidelines then you have two options. Change the guideline or create a plan about how will you fix the guideline violation.
