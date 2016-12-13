@@ -12,8 +12,8 @@ This repo is a collection of development guidelines
     - [Tests](#tests)
     - [Clean code](#clean-code)
     - [Business logic.](#business-logic)
-* [Development](#development)
 * [Version control](#version-control)
+* [Development](#development)
 * [Y2 Guidelines](#y2-guidelines)
   + [Services](#services)
   + [Modules](#modules)
@@ -119,14 +119,6 @@ https://cleancoders.com/
 - Try the new feature manually.
 - Validate the business logic if you can. Every developer should understand the business logic, and they can help each other to check everything is ok and it helps to understand the business logic which not developed by you.
 
-## Development
-- Use Y2 approach for projects.
-  - Separate the External Managing Tasks (EMT), Internal Managing Tasks (IMT) and Executing Tasks (ET).
-    - Motivation:
-      - It force you to separate the business logic from generic code, which generate a lot of open source and reusable code.
-      - It facilitate to create clean and maintainable code.
-      - It helps you to write proper test, which fasten the development.
-
 ## Version control
 - Use GIT
   - Work with feature branch
@@ -142,6 +134,14 @@ https://cleancoders.com/
     - It has to be business logic free problem. 
       - Example: Pub/Sub with RabbitMQ
   - Use a git hook which do not allow the force push on master on every client project.
+
+## Development
+- Use Y2 approach for projects.
+  - Separate the External Managing Tasks (EMT), Internal Managing Tasks (IMT) and Executing Tasks (ET).
+    - Motivation:
+      - It force you to separate the business logic from generic code, which generate a lot of open source and reusable code.
+      - It facilitate to create clean and maintainable code.
+      - It helps you to write proper test, which fasten the development.
 
 ## Y2 Guidelines
 ### Services
