@@ -81,7 +81,7 @@ Create as detailed message body as you can if you have context
 // bad
 add the DI lib, you can register a module with
 registerModule, if the DI do not find the module
-then it throw and error
+then it throw an error
 
 // bad
 <no context>
