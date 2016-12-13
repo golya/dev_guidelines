@@ -240,6 +240,7 @@ function execute(elements) {
 ### EMTs and IMTs should be tested by BDD. 
 - Driven by user features.
 - Do not test control structures (the BDD step should be driven by user feature)
+
 ### ET should be tested by TDD.
 - Driven by control structures. 
   - if/else/switch/?
@@ -264,7 +265,7 @@ it('should calculate the price', () => {
 ```
  
 - Try to avoid to test a whole data struct, it is fragile.
-```
+```javascript
 // bad
 it ('test', () => {
   expect(data).toBeEqual({
