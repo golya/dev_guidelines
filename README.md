@@ -15,8 +15,8 @@ This repo is a collection of development guidelines
 * [Version control](#version-control)
 * [Development](#development)
 * [Y2 Guidelines](#y2-guidelines)
-  + [Services](#services)
-  + [Modules](#modules)
+  + [Managing tasks (services)](#managing-tasks-services)
+  + [Executing tasks (modules)](#executing-tasks-modules)
 * [Testing](#testing)
 
 ## Review
@@ -144,18 +144,64 @@ https://cleancoders.com/
       - It helps you to write proper test, which fasten the development.
 
 ## Y2 Guidelines
-### Services
-  - A service can not import another service, have to use DI container.
-  - Can not require the container module in a service.
-  - A service can import pure modules possibly from ./
-  - In services you should not use native data struct or control structures.
-  - A service should not store internal state.
+### Managing Tasks (services)
+- Internal Managing Tasks can get External Managing Tasks and Internal Managing Tasks only through DI.
+```
+// bad
+const users = require(../../internal/user);
+function authService () {
+  users.getAll();
+}
 
-### Modules
+// bad, can not require the container module in a Managing Tasks
+const container = require(../../../container);
+function authService () {
+  container.get('users').getAll();
+}
+
+// good
+function authService (users) {
+  users.getAll();
+}
+```
+
+- Internal Managing Tasks can get Executing Task only through module system from its own directory, and the Executing task responsibility should be related to the Internal Managing Tasks.
+```
+// bad
+const tools = require(../../internal/messages/tools);
+
+// good
+const tools = require(./tools);
+```
+
+- External Managing Tasks can get External Managing Tasks only through DI.
+- You cannot pass a Managing Task.
+```
+// bad
+customerService.getCustomers(userService);
+
+// bad
+tools.calculateCustomerPrice(customerService);
+```
+
+- In Managing Tasks you should not use control structures and modify, mutate state.
+```
+// bad
+  let user = userService.getUser();
+  if (user.type === undefined) {
+    user.type = 'developer';
+  }
+
+// good
+const user = userService.getUser();
+const initializedUser = tools.initUser(user);
+```
+
+### Executing Tasks (modules)
   - A module can import pure modules possibly from ./  
   - If you want to use a public module element from another module then you should promote it to a service. 	  
   - A module can not use the DI container.
-  - A module can store state.
+  - A module can store internal state in the function scope.
 
 ## Testing
 - EMTs and IMTs should be tested by BDD. 
