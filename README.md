@@ -92,6 +92,14 @@ We do not want to implement these business logic free but generic services
 in ever new project, therefore we make a standardized DI system.
 ```
 
+Footer
+
+In case of someone modify the given patch then add sign-off to the footer which can show who is contributed on the given patch. 
+
+```
+Signed-off-by: <full name> <email address>
+```
+
 #### Commit separation
 - Can the commit be separated into smaller commits?
 - Do not commit the feature and the usage together, the implementation and the usage has a different context. You can push the tested implementation eariler the the usage, and from that point everyone can use it.
